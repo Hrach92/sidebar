@@ -8,9 +8,17 @@ import { Box } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
 import Slider from "./slider";
 import CheckboxComponent from "./checkbox";
-import { specification } from "@/dependencies/instance";
+import { capacity, rating, specification } from "@/dependencies/instance";
+import { useSelector } from "@/hooks/redux";
+import { SidebarSate } from "@/store/reducer/sidebar";
 
 function Popular() {
+  const {
+    capacity: capacityDefault,
+    rating: ratingDefault,
+    price,
+    square,
+  } = useSelector(SidebarSate);
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
@@ -18,10 +26,26 @@ function Popular() {
           <Typography sx={sxStyle.title}>Популярные фильтры</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Slider title="Цена 1 часа аренды" specification={specification} />
-          <CheckboxComponent title="Вместимость" />
-          <Slider title="Площадь (кв.м)" specification={specification} />
-          <CheckboxComponent title="Рейтинг по отзывам" />
+          <Slider
+            title="Цена 1 часа аренды"
+            specification={specification}
+            defaultValue={price}
+          />
+          <CheckboxComponent
+            title="Вместимость"
+            radioParams={capacity}
+            defaultValue={capacityDefault}
+          />
+          <Slider
+            title="Площадь (кв.м)"
+            specification={specification}
+            defaultValue={square}
+          />
+          <CheckboxComponent
+            title="Рейтинг по отзывам"
+            radioParams={rating}
+            defaultValue={ratingDefault}
+          />
         </AccordionDetails>
       </Accordion>
     </Box>

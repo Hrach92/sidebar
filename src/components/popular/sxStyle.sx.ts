@@ -8,6 +8,7 @@ const sxStyle = {
     minHeight: "0",
     border: "0",
     marginTop: "0",
+    marginBottom: "25px",
     borderRadius: "3px",
     "&.Mui-expanded": {
       minHeight: "0",

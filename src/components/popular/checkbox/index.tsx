@@ -17,11 +17,13 @@ import { CheckboxParamTypes } from "@/dependencies/types";
 type CheckboxTypes = {
   title?: string;
   radioParams?: CheckboxParamTypes[];
+  defaultValue?: string;
 };
 
 function CheckboxComponent({
   title,
   radioParams = [],
+  defaultValue,
 }: CheckboxTypes): JSX.Element {
   return (
     <Box sx={sxStyle.container}>
@@ -35,8 +37,11 @@ function CheckboxComponent({
           <FormControl>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
+              defaultValue={defaultValue}
               name="radio-buttons-group"
+              onChange={(e) => {
+                console.log(e.target.value);
+              }}
             >
               {radioParams.map(({ value, label, id }) => {
                 return (
@@ -45,6 +50,7 @@ function CheckboxComponent({
                       value={value}
                       control={<Radio />}
                       label={label}
+                      sx={sxStyle.label}
                     />
                   </React.Fragment>
                 );

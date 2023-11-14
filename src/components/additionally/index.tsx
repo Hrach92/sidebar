@@ -7,8 +7,12 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
 import CheckboxComponent from "../popular/checkbox";
+import { zoning } from "@/dependencies/instance";
+import { useSelector } from "@/hooks/redux";
+import { SidebarSate } from "@/store/reducer/sidebar";
 
 function Additionally() {
+  const { zoning: zoningDefault } = useSelector(SidebarSate);
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
@@ -16,7 +20,11 @@ function Additionally() {
           <Typography sx={sxStyle.title}>Дополнительно</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <CheckboxComponent title="зонирование" />
+          <CheckboxComponent
+            title="зонирование"
+            radioParams={zoning}
+            defaultValue={zoningDefault}
+          />
           <CheckboxComponent title="Что еще есть" />
           <CheckboxComponent title="Условия" />
         </AccordionDetails>

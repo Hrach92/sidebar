@@ -2,14 +2,53 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { SidebarTypes } from "./types";
 import type { RootState } from "..";
+import {
+  capacityDefault,
+  currentDate,
+  ratingDefault,
+  zoningDefault,
+} from "@/dependencies/instance";
 
-const initialState = {};
+const initialState = {
+  date: currentDate,
+  price: 2000,
+  square: 2000,
+  capacity: capacityDefault,
+  zoning: zoningDefault,
+  rating: ratingDefault,
+};
 
 export const Sidebar = createSlice({
   name: "sidebar",
   initialState,
-  reducers: {},
+  reducers: {
+    setDate: (state, { payload }) => {
+      state.date = payload;
+    },
+    setPrice: (state, { payload }) => {
+      state.price = payload;
+    },
+    setSquare: (state, { payload }) => {
+      state.square = payload;
+    },
+    setCapacity: (state, { payload }) => {
+      state.capacity = payload;
+    },
+    setZoning: (state, { payload }) => {
+      state.zoning = payload;
+    },
+    setRating: (state, { payload }) => {
+      state.rating = payload;
+    },
+  },
 });
-export const {} = Sidebar.actions;
+export const {
+  setDate,
+  setPrice,
+  setSquare,
+  setCapacity,
+  setZoning,
+  setRating,
+} = Sidebar.actions;
 export const SidebarSate = (state: RootState): SidebarTypes => state.sidebar;
 export default Sidebar.reducer;

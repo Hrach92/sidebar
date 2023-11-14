@@ -11,10 +11,15 @@ import { Specification } from "@/dependencies/types";
 type SliderTypes = {
   title?: string;
   specification: Specification;
+  defaultValue?: number;
 };
 
-function SliderComponent({ title, specification }: SliderTypes): JSX.Element {
-  const { defaultValue, max, min, step } = specification;
+function SliderComponent({
+  title,
+  specification,
+  defaultValue,
+}: SliderTypes): JSX.Element {
+  const { max, min, step } = specification;
 
   return (
     <Box sx={sxStyle.container}>
@@ -32,6 +37,9 @@ function SliderComponent({ title, specification }: SliderTypes): JSX.Element {
             defaultValue={defaultValue}
             step={step}
             valueLabelDisplay="on"
+            onChange={(e: any) => {
+              console.log(e.target?.value as number);
+            }}
           />
           <Box sx={sxStyle.values}>
             <Typography>{min}</Typography>

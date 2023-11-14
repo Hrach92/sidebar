@@ -1,7 +1,6 @@
 export type Specification = {
   min: number;
   max: number;
-  defaultValue: number;
   step: number;
 };
 
