@@ -12,6 +12,11 @@ const gilroy = localFont({
       weight: "500",
       style: "normal",
     },
+    {
+      path: "../pages/fonts/Gilroy/Gilroy-Light.ttf",
+      weight: "400",
+      style: "normal",
+    },
   ],
   variable: "--gilroy",
 });
