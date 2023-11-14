@@ -4,19 +4,54 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Slider } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 import sxStyle from "./sxStyle.sx";
+import { CheckboxParamTypes } from "@/dependencies/types";
+
 type CheckboxTypes = {
   title?: string;
+  radioParams?: CheckboxParamTypes[];
 };
-function CheckboxComponent({ title }: CheckboxTypes): JSX.Element {
+
+function CheckboxComponent({
+  title,
+  radioParams = [],
+}: CheckboxTypes): JSX.Element {
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography variant="subtitle1">{title}</Typography>
+          <Typography variant="subtitle1" sx={sxStyle.title}>
+            {title}
+          </Typography>
         </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
+        <AccordionDetails>
+          <FormControl>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="female"
+              name="radio-buttons-group"
+            >
+              {radioParams.map(({ value, label, id }) => {
+                return (
+                  <React.Fragment key={id}>
+                    <FormControlLabel
+                      value={value}
+                      control={<Radio />}
+                      label={label}
+                    />
+                  </React.Fragment>
+                );
+              })}
+            </RadioGroup>
+          </FormControl>
+        </AccordionDetails>
       </Accordion>
     </Box>
   );

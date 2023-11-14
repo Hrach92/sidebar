@@ -5,12 +5,12 @@ const sxStyle = {
     border: "0",
   },
   menu: {
-    height: "34px",
-    minHeight: "34px",
+    minHeight: "0",
     border: "0",
+    height: "16px",
     borderRadius: "3px",
     "&.Mui-expanded": {
-      minHeight: "34px",
+      minHeight: "0",
     },
   },
   title: {

@@ -3,14 +3,10 @@ export type Specification = {
   max: number;
   defaultValue: number;
   step: number;
-  marks: [
-    {
-      value: number;
-      label: string;
-    },
-    {
-      value: number;
-      label: string;
-    }
-  ];
+};
+
+export type CheckboxParamTypes = {
+  value: string;
+  label: string;
+  id: number;
 };

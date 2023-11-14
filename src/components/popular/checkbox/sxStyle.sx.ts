@@ -11,5 +11,9 @@ const sxStyle = {
       minHeight: "34px",
     },
   },
+  title: {
+    fontWeight: "600",
+    color: "var(--Grey_3)",
+  },
 };
 export default sxStyle;

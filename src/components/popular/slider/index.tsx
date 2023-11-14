@@ -14,13 +14,15 @@ type SliderTypes = {
 };
 
 function SliderComponent({ title, specification }: SliderTypes): JSX.Element {
-  const { defaultValue, marks, max, min, step } = specification;
+  const { defaultValue, max, min, step } = specification;
 
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography variant="subtitle1">{title}</Typography>
+          <Typography variant="subtitle1" sx={sxStyle.title}>
+            {title}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Slider
@@ -29,8 +31,12 @@ function SliderComponent({ title, specification }: SliderTypes): JSX.Element {
             size="small"
             defaultValue={defaultValue}
             step={step}
-            marks={marks}
+            valueLabelDisplay="on"
           />
+          <Box sx={sxStyle.values}>
+            <Typography>{min}</Typography>
+            <Typography>{max}</Typography>
+          </Box>
         </AccordionDetails>
       </Accordion>
     </Box>

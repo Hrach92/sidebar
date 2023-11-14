@@ -53,5 +53,14 @@ export default createTheme({
         },
       },
     },
+    MuiPopper: {
+      styleOverrides: {
+        root: {
+          ">div>div>div>div": {
+            width: "278px",
+          },
+        },
+      },
+    },
   },
 });

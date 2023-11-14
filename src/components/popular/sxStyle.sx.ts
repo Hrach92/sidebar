@@ -4,12 +4,13 @@ const sxStyle = {
     marginTop: "25px",
   },
   menu: {
-    height: "34px",
-    minHeight: "34px",
+    height: "16px",
+    minHeight: "0",
     border: "0",
+    marginTop: "0",
     borderRadius: "3px",
     "&.Mui-expanded": {
-      minHeight: "34px",
+      minHeight: "0",
     },
   },
   title: {

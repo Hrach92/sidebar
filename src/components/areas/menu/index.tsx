@@ -9,10 +9,10 @@ import sxStyle from "./sxStyle.sx";
 
 function Menu() {
   return (
-    <Box>
+    <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography>Accordion 1</Typography>
+          <Typography sx={sxStyle.value}>Любой</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
