@@ -8,6 +8,7 @@ import { Box } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
 import Slider from "./slider";
 import CheckboxComponent from "./checkbox";
+import { specification } from "@/dependencies/instance";
 
 function Popular() {
   return (
@@ -17,9 +18,9 @@ function Popular() {
           <Typography sx={sxStyle.title}>Популярные фильтры</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Slider title="Цена 1 часа аренды" />
+          <Slider title="Цена 1 часа аренды" specification={specification} />
           <CheckboxComponent title="Вместимость" />
-          <Slider title="Площадь (кв.м)" />
+          <Slider title="Площадь (кв.м)" specification={specification} />
           <CheckboxComponent title="Рейтинг по отзывам" />
         </AccordionDetails>
       </Accordion>

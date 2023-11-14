@@ -6,20 +6,16 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Slider } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
+import { Specification } from "@/dependencies/types";
+
 type SliderTypes = {
   title?: string;
+  specification: Specification;
 };
-function SliderComponent({ title }: SliderTypes): JSX.Element {
-  const marks = [
-    {
-      value: 1600,
-      label: "1600",
-    },
-    {
-      value: 3800,
-      label: "3800",
-    },
-  ];
+
+function SliderComponent({ title, specification }: SliderTypes): JSX.Element {
+  const { defaultValue, marks, max, min, step } = specification;
+
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
@@ -28,13 +24,11 @@ function SliderComponent({ title }: SliderTypes): JSX.Element {
         </AccordionSummary>
         <AccordionDetails>
           <Slider
-            min={1600}
-            max={3800}
+            min={min}
+            max={max}
             size="small"
-            defaultValue={2000}
-            step={10}
-            aria-label="Small"
-            valueLabelDisplay="auto"
+            defaultValue={defaultValue}
+            step={step}
             marks={marks}
           />
         </AccordionDetails>

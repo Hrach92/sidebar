@@ -30,4 +30,20 @@ export default createTheme({
       fontFamily: "var(--gilroy)",
     },
   },
+  components: {
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+        },
+      },
+    },
+  },
 });

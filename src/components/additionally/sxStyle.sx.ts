@@ -1,6 +1,8 @@
 const sxStyle = {
   container: {
     marginTop: "25px",
+    width: "100%",
+    border: "0",
   },
   menu: {
     height: "34px",
