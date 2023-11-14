@@ -14,9 +14,7 @@ function CheckboxComponent({ title }: CheckboxTypes): JSX.Element {
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography sx={{ fontWeight: "700" }} variant="h4">
-            {title}
-          </Typography>
+          <Typography variant="subtitle1">{title}</Typography>
         </AccordionSummary>
         <AccordionDetails></AccordionDetails>
       </Accordion>

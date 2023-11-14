@@ -42,6 +42,14 @@ export default createTheme({
       styleOverrides: {
         root: {
           boxShadow: "none",
+          margin: "0",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          paddingLeft: "0",
         },
       },
     },

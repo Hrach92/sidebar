@@ -20,7 +20,7 @@ function SliderComponent({ title, specification }: SliderTypes): JSX.Element {
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography>{title}</Typography>
+          <Typography variant="subtitle1">{title}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Slider
