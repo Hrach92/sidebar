@@ -17,12 +17,6 @@ const sxStyle = {
         letterSpacing: "0.36px",
       },
     },
-    ">MuiDateCalendar-root": {
-      root: {
-        border: "1px solid red",
-      },
-      border: "1px solid red",
-    },
   },
 };
 export default sxStyle;

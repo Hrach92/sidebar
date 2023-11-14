@@ -16,6 +16,11 @@ const initialState = {
   capacity: capacityDefault,
   zoning: zoningDefault,
   rating: ratingDefault,
+  areas: [],
+  time: {
+    from: "15:30",
+    to: "15:30",
+  },
 };
 
 export const Sidebar = createSlice({
@@ -40,6 +45,14 @@ export const Sidebar = createSlice({
     setRating: (state, { payload }) => {
       state.rating = payload;
     },
+    setAreas: (state, { payload }) => {
+      state.areas = payload
+        .filter(({ isChecked }: { isChecked: boolean }) => isChecked)
+        .map(({ title }: { title: string }) => title);
+    },
+    setTime: (state, { payload }) => {
+      state.time = payload;
+    },
   },
 });
 export const {
@@ -49,6 +62,8 @@ export const {
   setCapacity,
   setZoning,
   setRating,
+  setAreas,
+  setTime,
 } = Sidebar.actions;
 export const SidebarSate = (state: RootState): SidebarTypes => state.sidebar;
 export default Sidebar.reducer;

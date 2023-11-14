@@ -13,18 +13,25 @@ import {
 } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
 import { CheckboxParamTypes } from "@/dependencies/types";
+import { useDispatch } from "@/hooks/redux";
 
 type CheckboxTypes = {
   title?: string;
   radioParams?: CheckboxParamTypes[];
   defaultValue?: string;
+  value?: string;
+  setValue?: (val: string) => void;
 };
 
 function CheckboxComponent({
   title,
   radioParams = [],
   defaultValue,
+  value,
+  setValue = () => {},
 }: CheckboxTypes): JSX.Element {
+  const dispatch = useDispatch();
+
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
@@ -38,10 +45,9 @@ function CheckboxComponent({
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue={defaultValue}
+              value={value}
               name="radio-buttons-group"
-              onChange={(e) => {
-                console.log(e.target.value);
-              }}
+              onChange={(e) => dispatch(setValue(e.target.value))}
             >
               {radioParams.map(({ value, label, id }) => {
                 return (

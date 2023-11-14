@@ -10,15 +10,22 @@ import Slider from "./slider";
 import CheckboxComponent from "./checkbox";
 import { capacity, rating, specification } from "@/dependencies/instance";
 import { useSelector } from "@/hooks/redux";
-import { SidebarSate } from "@/store/reducer/sidebar";
+import {
+  SidebarSate,
+  setCapacity,
+  setPrice,
+  setRating,
+  setSquare,
+} from "@/store/reducer/sidebar";
 
-function Popular() {
+function Popular(): JSX.Element {
   const {
     capacity: capacityDefault,
     rating: ratingDefault,
     price,
     square,
   } = useSelector(SidebarSate);
+
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
@@ -30,21 +37,27 @@ function Popular() {
             title="Цена 1 часа аренды"
             specification={specification}
             defaultValue={price}
+            setValue={setPrice}
           />
           <CheckboxComponent
             title="Вместимость"
             radioParams={capacity}
             defaultValue={capacityDefault}
+            setValue={setCapacity}
+            value={capacityDefault}
           />
           <Slider
             title="Площадь (кв.м)"
             specification={specification}
             defaultValue={square}
+            setValue={setSquare}
           />
           <CheckboxComponent
             title="Рейтинг по отзывам"
             radioParams={rating}
             defaultValue={ratingDefault}
+            setValue={setRating}
+            value={ratingDefault}
           />
         </AccordionDetails>
       </Accordion>

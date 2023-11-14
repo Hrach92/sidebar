@@ -14,7 +14,7 @@ const Sidebar = (): JSX.Element => {
 
   const send = useCallback(async () => {
     try {
-      axios.post("http://localohost:5050", sidebar);
+      await axios.post("http://localohost:5050", sidebar);
     } catch (err: any) {
       console.log(err.message);
     }

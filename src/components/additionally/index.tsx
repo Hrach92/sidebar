@@ -9,10 +9,11 @@ import sxStyle from "./sxStyle.sx";
 import CheckboxComponent from "../popular/checkbox";
 import { zoning } from "@/dependencies/instance";
 import { useSelector } from "@/hooks/redux";
-import { SidebarSate } from "@/store/reducer/sidebar";
+import { SidebarSate, setZoning } from "@/store/reducer/sidebar";
 
 function Additionally() {
   const { zoning: zoningDefault } = useSelector(SidebarSate);
+
   return (
     <Box sx={sxStyle.container}>
       <Accordion>
@@ -24,6 +25,8 @@ function Additionally() {
             title="зонирование"
             radioParams={zoning}
             defaultValue={zoningDefault}
+            setValue={setZoning}
+            value={zoningDefault}
           />
           <CheckboxComponent title="Что еще есть" />
           <CheckboxComponent title="Условия" />

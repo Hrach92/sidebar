@@ -35,4 +35,21 @@ export const rating: CheckboxParamTypes[] = [
 export const ratingDefault = rating[0].label;
 
 const date = new Date();
-export const currentDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
+export const currentDate = `${date.getFullYear()}-${
+  date.getMonth() + 1
+}-${date.getDate()}`;
+
+export const areas = [
+  { title: "Василеостровский", isChecked: false, id: 1 },
+  { title: "Выборгский", isChecked: false, id: 2 },
+  { title: "Калининский", isChecked: false, id: 3 },
+  { title: "Кировский", isChecked: false, id: 4 },
+  { title: "Красногвардейский", isChecked: false, id: 5 },
+  { title: "Красносельский", isChecked: false, id: 6 },
+  { title: "Кронштадский", isChecked: false, id: 7 },
+  { title: "Курортный", isChecked: false, id: 8 },
+  { title: "Московский", isChecked: false, id: 9 },
+  { title: "Невский", isChecked: false, id: 10 },
+  { title: "Петроградский", isChecked: false, id: 11 },
+  { title: "Петродворцовый", isChecked: false, id: 12 },
+];
