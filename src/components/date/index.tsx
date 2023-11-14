@@ -1,9 +1,8 @@
 import { Typography } from "@mui/material";
 import { memo } from "react";
 import sxStyle from "./sxStyle.sx";
-import { DesktopDatePicker } from "@mui/x-date-pickers";
-import dayjs from "dayjs";
 import ResponsiveDatePickers from "./datePicker";
+import TimePicker from "./timepicker";
 
 const Date = (): JSX.Element => {
   return (
@@ -12,6 +11,7 @@ const Date = (): JSX.Element => {
         Дата и время праздника
       </Typography>
       <ResponsiveDatePickers />
+      <TimePicker />
     </>
   );
 };
