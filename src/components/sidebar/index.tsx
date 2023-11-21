@@ -22,9 +22,9 @@ const Sidebar = (): JSX.Element => {
 
   return (
     <Box sx={sxStyle.container}>
-      <Typography sx={sxStyle.title} variant="h4">
+      <span className="text-left w-full text-regular font-regular">
         Параметры подбора
-      </Typography>
+      </span>
       <Divider sx={sxStyle.divider} />
       <Date />
       <Areas />
@@ -35,3 +35,11 @@ const Sidebar = (): JSX.Element => {
   );
 };
 export default memo(Sidebar);
+/* h4: {
+  fontSize: "16px",
+  fontWeight: "700",
+  fontStyle: "normal",
+  lineHeight: "126.9%",
+  letterSpacing: "0.48px",
+  fontFamily: "var(--gilroy)",
+}, */

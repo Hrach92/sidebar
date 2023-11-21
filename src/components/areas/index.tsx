@@ -5,7 +5,7 @@ import sxStyle from "./sxStyle.sx";
 const Areas = () => {
   return (
     <Box sx={sxStyle.container}>
-      <Typography variant="subtitle1">Район</Typography>
+      <span className="w-full text-light text-black font-light">Район</span>
       <Menu />
     </Box>
   );

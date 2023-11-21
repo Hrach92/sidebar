@@ -17,7 +17,7 @@ function Additionally() {
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography sx={sxStyle.title}>Дополнительно</Typography>
+          <span className="text-regular font-regular">Дополнительно</span>
         </AccordionSummary>
         <AccordionDetails>
           <CheckboxComponent
