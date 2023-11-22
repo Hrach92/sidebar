@@ -4,23 +4,27 @@ module.exports = {
   theme: {
     extend: {
       fontWeight: {
-        regular: 700,
-        middle: 600,
-        light: 500,
-        small: 400,
+        font700: 700,
+        font600: 600,
+        font500: 500,
+        font400: 400,
       },
       fontFamily: {
-        regular: "var(--gilroy)",
-        light: "var(--gilroy)",
+        gilroy: "var(--gilroy)",
       },
       fontSize: {
-        regular: "16px",
-        small: "12px",
-        light: "14px",
+        size16: "16px",
+        size14: "14px",
+        size12: "12px",
       },
       colors: {
         grey: "var(--GREY)",
         black: "var(--BLACK)",
+        line: "var(--LINE)",
+        grey3: "var(--Grey_3)",
+      },
+      letterSpacing: {
+        ls: "0.48px",
       },
       spacing: {
         25: "25px",

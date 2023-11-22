@@ -1,15 +1,12 @@
-import { Typography } from "@mui/material";
 import { memo } from "react";
-import sxStyle from "./sxStyle.sx";
+import style from "./style";
 import ResponsiveDatePickers from "./datePicker";
 import TimePicker from "./timepicker";
 
 const Date = (): JSX.Element => {
   return (
     <>
-      <Typography sx={sxStyle.title} variant="subtitle1">
-        Дата и время праздника
-      </Typography>
+      <span className={style.title}>Дата и время праздника</span>
       <ResponsiveDatePickers />
       <TimePicker />
     </>

@@ -1,7 +1,8 @@
 const sxStyle = {
-  container: {
-    width: "100%",
-  },
+  container: "w-full",
+  title: "text-size14 font-font600 tracking-ls text-grey3 font-gilroy",
+  slider: "flex flex-row justify-between",
+  sliderItem: "text-size12 font-font500 text-grey font-gilroy",
   menu: {
     height: "34px",
     minHeight: "34px",
@@ -9,24 +10,6 @@ const sxStyle = {
     borderRadius: "3px",
     "&.Mui-expanded": {
       minHeight: "34px",
-    },
-  },
-  title: {
-    fontWeight: "600",
-    color: "var(--Grey_3)",
-  },
-  values: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    ">p": {
-      color: "var(--Gray_1, #858585)",
-      fontFamily: "var(--gilroy)",
-      fontSize: "12px",
-      fontStyle: "normal",
-      fontWeight: "500",
-      lineHeight: "126.9%",
-      letterSpacing: "0.36px",
     },
   },
 };

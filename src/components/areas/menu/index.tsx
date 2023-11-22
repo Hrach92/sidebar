@@ -2,7 +2,6 @@ import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
@@ -12,13 +11,15 @@ function Menu() {
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <span className="text-small text-grey font-small">Любой</span>
+          <span className="text-size12 text-grey font-font400 mt-[10px] ml-[5px] font-gilroy">
+            Любой
+          </span>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          </span>
         </AccordionDetails>
       </Accordion>
     </Box>

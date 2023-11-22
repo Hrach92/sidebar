@@ -1,13 +1,12 @@
-import { Box, Typography } from "@mui/material";
 import Menu from "./menu";
-import sxStyle from "./sxStyle.sx";
+import style from "./style";
 
 const Areas = () => {
   return (
-    <Box sx={sxStyle.container}>
-      <span className="w-full text-light text-black font-light">Район</span>
+    <div className={style.container}>
+      <span className={style.title}>Район</span>
       <Menu />
-    </Box>
+    </div>
   );
 };
 export default Areas;

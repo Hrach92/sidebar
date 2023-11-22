@@ -2,7 +2,6 @@ import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Box,
@@ -29,9 +28,9 @@ function CheckboxComponent({
     <Box sx={sxStyle.container}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography variant="subtitle1" sx={sxStyle.title}>
+          <span className="text-size14 text-grey3 font-font600 tracking-ls font-gilroy">
             {title}
-          </Typography>
+          </span>
         </AccordionSummary>
         <AccordionDetails>
           <FormControl>

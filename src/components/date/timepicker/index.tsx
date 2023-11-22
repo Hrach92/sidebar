@@ -1,6 +1,5 @@
 import * as React from "react";
 import dayjs, { Dayjs } from "dayjs";
-import { Box, Typography } from "@mui/material";
 import sxStyle from "./sxStyle.sx";
 import { TimePicker } from "@mui/x-date-pickers";
 
@@ -10,24 +9,28 @@ function TimePickerContainer() {
   );
 
   return (
-    <Box sx={sxStyle.container}>
-      <Box>
-        <Typography variant="subtitle1">Начнем в</Typography>
+    <div className="w-full flex flex-row gap-[20px] p-0 mt-[25px]">
+      <div>
+        <span className="text-size14 font-font400 text-black tracking-ls font-gilroy">
+          Начнем в
+        </span>
         <TimePicker
           value={value}
           onChange={(newValue) => setValue(newValue)}
           sx={sxStyle.item}
         />
-      </Box>
-      <Box>
-        <Typography variant="subtitle1">Закончим в</Typography>
+      </div>
+      <div>
+        <span className="text-size14 font-font400 text-black tracking-ls font-gilroy">
+          Начнем в
+        </span>
         <TimePicker
           value={value}
           onChange={(newValue) => setValue(newValue)}
           sx={sxStyle.item}
         />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 

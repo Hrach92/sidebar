@@ -1,6 +1,6 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { memo, useCallback } from "react";
-import sxStyle from "./sxStyle.sx";
+import style from "./style";
 import Date from "../date";
 import Areas from "../areas";
 import Popular from "../popular";
@@ -21,25 +21,20 @@ const Sidebar = (): JSX.Element => {
   }, [sidebar]);
 
   return (
-    <Box sx={sxStyle.container}>
-      <span className="text-left w-full text-regular font-regular">
-        Параметры подбора
-      </span>
-      <Divider sx={sxStyle.divider} />
+    <div className={style.container}>
+      <span className={style.title}>Параметры подбора</span>
+      <div className={style.divider} />
       <Date />
       <Areas />
       <Popular />
       <Additionally />
-      <Button onClick={send}>Submit</Button>
-    </Box>
+      <button
+        className="text-size14 font-gilroy border border-solid border-black-[1px] text-[blue] cursor-pointer rounded-[3px]"
+        onClick={send}
+      >
+        Submit
+      </button>
+    </div>
   );
 };
 export default memo(Sidebar);
-/* h4: {
-  fontSize: "16px",
-  fontWeight: "700",
-  fontStyle: "normal",
-  lineHeight: "126.9%",
-  letterSpacing: "0.48px",
-  fontFamily: "var(--gilroy)",
-}, */

@@ -2,10 +2,8 @@ import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box } from "@mui/material";
-import sxStyle from "./sxStyle.sx";
+import style from "./style";
 import Slider from "./slider";
 import CheckboxComponent from "./checkbox";
 import { capacity, rating, specification } from "@/dependencies/instance";
@@ -20,10 +18,10 @@ function Popular() {
     square,
   } = useSelector(SidebarSate);
   return (
-    <Box sx={sxStyle.container}>
+    <div className={style.container}>
       <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={sxStyle.menu}>
-          <Typography sx={sxStyle.title}>Популярные фильтры</Typography>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={style.menu}>
+          <span className={style.title}>Популярные фильтры</span>
         </AccordionSummary>
         <AccordionDetails>
           <Slider
@@ -48,7 +46,7 @@ function Popular() {
           />
         </AccordionDetails>
       </Accordion>
-    </Box>
+    </div>
   );
 }
 
